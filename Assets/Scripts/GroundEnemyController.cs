@@ -30,6 +30,9 @@ public class GroundEnemyController : MonoBehaviour
 
     private Vector3 DirectionToTarget()
     {
+        if (!target)
+            return default(Vector3);
+
         direction = target.transform.position - transform.position;
         direction.y = 0;
         direction.Normalize();

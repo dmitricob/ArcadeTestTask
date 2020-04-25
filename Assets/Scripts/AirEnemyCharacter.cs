@@ -5,11 +5,13 @@ using UnityEngine;
 public class AirEnemyCharacter : Character
 {
     public Shooter chracterShooter;
+    public AutoMover characterMover;
 
     public void Initialization()
     {
         base.Initialization();
         chracterShooter = GetComponent<Shooter>();
+        characterMover = GetComponent<AutoMover>();
     }
 
     private void Start()
@@ -20,5 +22,10 @@ public class AirEnemyCharacter : Character
     public void Shoot()
     {
         chracterShooter.Shoot();
+    }
+
+    public void MoveTo(Vector3 targetPosition)
+    {
+        characterMover.MoveTo(targetPosition);
     }
 }

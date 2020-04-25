@@ -3,15 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mover : MonoBehaviour
+public class AutoMover : MonoBehaviour
 {
     public float speed = 10;
-    public Vector3 targetPosition;
+    private Vector3 targetPosition;
     public Action OnArrive; 
     //private float curentMoveTime;
     //private float timeToMove;
+
     private float positiongBias = 0.0001f;
     private bool isMoveAllowed;
+
+    public Vector3 GetTargetPosition()
+    {
+        return targetPosition;
+    }
 
     void Update()
     {
@@ -31,12 +37,15 @@ public class Mover : MonoBehaviour
         }
     }
 
-    public void MoveTo(Vector3 targetPosition)
+    public void MoveTo(Vector3 targetPosition, bool startMoveImmediately = true)
     {
         this.targetPosition = targetPosition;
+        isMoveAllowed = startMoveImmediately;
+    }
+    public void StartMove()
+    {
         isMoveAllowed = true;
     }
-
     public void StopMove()
     {
         isMoveAllowed = false;

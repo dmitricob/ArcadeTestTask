@@ -39,7 +39,7 @@ public class BossController : MonoBehaviour
         bossCharacter.Move(targetPosition);
     }
 
-    private State GetRandomBossState()
+    private State GetRandomState()
     {
         return (State)Random.Range(0,bossStateCount - 1);
     }
