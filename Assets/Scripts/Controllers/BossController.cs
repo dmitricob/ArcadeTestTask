@@ -29,11 +29,7 @@ public class BossController : MonoBehaviour
         
     }
 
-    //master1
-    //new3
-    //new4
-    //feature1
-    //new5
+
     private void MoveTo(Vector3 targetPosition)
     {
 

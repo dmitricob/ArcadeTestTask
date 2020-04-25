@@ -1,9 +1,0 @@
-diff a/Assets/Scripts/BossController.cs b/Assets/Scripts/BossController.cs	(rejected hunks)
-@@ -32,6 +32,7 @@
- 
- 
-     //master1
-+    //new3
-     private void MoveTo(Vector3 targetPosition)
-     {
- 
