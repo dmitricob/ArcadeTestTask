@@ -1,9 +1,10 @@
 ﻿using Assets.Scripts;
+using Assets.Scripts.Interfaces;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour, IDamageable
+public class Character : MonoBehaviour, IDamageable, IMoveable
 
 {
     public CharacterController characterController;

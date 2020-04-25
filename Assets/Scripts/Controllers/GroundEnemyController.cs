@@ -20,13 +20,13 @@ public class GroundEnemyController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        direction = DirectionToTarget();
-        direction *= Time.deltaTime;
+    //void Update()
+    //{
+    //    direction = DirectionToTarget();
+    //    direction *= Time.deltaTime;
 
-        enemyCharacter.Move(direction);
-    }
+    //    enemyCharacter.Move(direction);
+    //}
 
     private Vector3 DirectionToTarget()
     {

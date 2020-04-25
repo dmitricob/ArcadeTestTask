@@ -23,12 +23,6 @@ public class BossController : MonoBehaviour
         bossCharacter = GetComponent<BossCharacter>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 
     private void MoveTo(Vector3 targetPosition)
     {

@@ -5,13 +5,13 @@ using UnityEngine;
 public class AirEnemyCharacter : Character
 {
     public Shooter chracterShooter;
-    public AutoMover characterMover;
+    public AutoMoverTo characterMover;
 
     public void Initialization()
     {
         base.Initialization();
         chracterShooter = GetComponent<Shooter>();
-        characterMover = GetComponent<AutoMover>();
+        characterMover = GetComponent<AutoMoverTo>();
     }
 
     private void Start()
