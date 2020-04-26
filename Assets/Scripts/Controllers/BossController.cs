@@ -21,16 +21,16 @@ public class BossController : MonoBehaviour
     public float timeToMove = 2;
     public float timeToWait = 1;
     public float timeBetweenShoot = 0.2f;
-
     public int shootVolleyCount = 3;
-
     public float shootAngle = 30;
-
-    public float speedBoost = 2;
 
     public float maxMove = 5;
 
-    private float stateTime;
+
+    public float speedBoost = 2;
+    private bool isSpeedBoosted;
+
+
 
     void Start()
     {
@@ -156,7 +156,6 @@ public class BossController : MonoBehaviour
     }
 
     private int bossStateCount = 4;
-    private bool isSpeedBoosted;
 
     enum State
     {

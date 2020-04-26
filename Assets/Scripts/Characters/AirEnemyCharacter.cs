@@ -8,11 +8,13 @@ public class AirEnemyCharacter : Character
     public Shooter chracterShooter;
     public MoverTo characterMover;
 
-    public void Initialization()
+    public new void Initialization()
     {
         base.Initialization();
         chracterShooter = GetComponent<Shooter>();
         characterMover = GetComponent<MoverTo>();
+
+        Debug.Log($"{gameObject} mover is {characterMover} ");
     }
 
     private void Start()

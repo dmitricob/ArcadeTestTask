@@ -19,7 +19,8 @@ public class PlayerController : MonoBehaviour
     {
         // if moving // ???
 
-        motion = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        motion = new Vector3(SimpleInput.GetAxis("Horizontal"), 0, SimpleInput.GetAxis("Vertical"));
+        //motion = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
 
         if (Mathf.Abs(motion.x) < moveBias

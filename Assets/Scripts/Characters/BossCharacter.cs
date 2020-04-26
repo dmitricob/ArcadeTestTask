@@ -8,7 +8,7 @@ public class BossCharacter : Character, IShootable
 {
     public AutoMoverToWithTime autoMover;
 
-    private Shooter shooter;
+    public Shooter shooter;
 
     private new void Initialization()
     {

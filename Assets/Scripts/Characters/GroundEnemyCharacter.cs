@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class GroundEnemyCharacter : Character
 {
-    public void Initialization()
+    public new void Initialization()
     {
         base.Initialization();
 

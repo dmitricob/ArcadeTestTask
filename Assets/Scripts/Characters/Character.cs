@@ -20,7 +20,10 @@ public class Character : MonoBehaviour, IDamageable, IMoveable
     private float hp;
     public float GetHp => hp;
 
-    public Action OnDie;
+    protected Action Die;
+
+    public delegate void OnDie(GameObject diedGameObject);
+    public OnDie onDie;
 
     public delegate void OnDamaged();
     public OnDamaged onDamaged;
@@ -29,8 +32,7 @@ public class Character : MonoBehaviour, IDamageable, IMoveable
     {
         characterController = GetComponent<CharacterController>();
         hp = maxHp;
-
-        OnDie = SelfDestroy;
+        Die = Die_;
     }
 
     /// <summary>
@@ -50,15 +52,16 @@ public class Character : MonoBehaviour, IDamageable, IMoveable
         if(hp <= 0)
         {
             hp = 0;
-            OnDie();
+            onDie?.Invoke(this.gameObject);
+            Die();
         }
 
-        onDamaged.Invoke();
+        onDamaged?.Invoke();
     }
 
-    public void Die()
+    public void Die_()
     {
-        OnDie();
+        SelfDestroy();
     }
 
     private void SelfDestroy()

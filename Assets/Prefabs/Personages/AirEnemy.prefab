@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 7835946350776650137}
   - component: {fileID: 8989605570158738917}
   - component: {fileID: -4523286974776515421}
-  - component: {fileID: 4606084783977829764}
   m_Layer: 12
   m_Name: AirEnemy
   m_TagString: Enemy
@@ -47,7 +46,7 @@ BoxCollider:
   m_GameObject: {fileID: 5850679908142408440}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -63,8 +62,8 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
+  m_Radius: 0.8
+  m_SlopeLimit: 0
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
@@ -102,9 +101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 0}
   speed: 5
-  hp: 10
-  chracterShooter: {fileID: 0}
-  characterMover: {fileID: 0}
+  maxHp: 10
+  chracterShooter: {fileID: 8989605570158738917}
+  characterMover: {fileID: -4523286974776515421}
 --- !u!114 &8989605570158738917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,20 +139,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
---- !u!114 &4606084783977829764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5850679908142408440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d59eb6e58c06572478a31a74521c47cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  timeToMove: 2
 --- !u!1 &6646822910676055774
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +228,7 @@ BoxCollider:
   m_GameObject: {fileID: 6646822910676055774}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}

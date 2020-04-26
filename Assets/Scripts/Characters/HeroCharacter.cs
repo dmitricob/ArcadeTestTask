@@ -10,7 +10,7 @@ public class HeroCharacter : Character
     public TargetTracker targetTracker;
 
 
-    public void Initialization()
+    public new void Initialization()
     {
         base.Initialization();
 

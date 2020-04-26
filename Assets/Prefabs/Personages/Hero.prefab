@@ -64,8 +64,8 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2503745269417017250}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
+  m_IsTrigger: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -95,9 +95,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 0}
-  speed: 0
-  characterShooter: {fileID: 0}
-  targetTracker: {fileID: 0}
+  speed: 15
+  maxHp: 10
+  characterShooter: {fileID: 2503745269417017240}
+  targetTracker: {fileID: 6847086913051395188}
 --- !u!114 &2503745269417017240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +120,7 @@ MonoBehaviour:
   whatCanShoot:
     serializedVersion: 2
     m_Bits: 6951
-  offset: {x: 0, y: 0.5, z: 0}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!114 &6847086913051395188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58064ca5ae8829499fcbf3765029ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  findRadius: 10
+  findRadius: 30
   whoToTrack:
     serializedVersion: 2
     m_Bits: 6144
@@ -145,11 +146,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2503745269417017250}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a44b80775c1b9084092af9ac5ef0ac44, type: 3}
+  m_Script: {fileID: 11500000, guid: 01768bf2bad92a447b9b8ec5630ae97e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hpBarController: {fileID: 0}
-  character: {fileID: 0}
+  character: {fileID: 2503745269417017243}
 --- !u!1 &4993427875072439522
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +241,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 4993427875072439522}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -334,7 +335,7 @@ SphereCollider:
   m_GameObject: {fileID: 6847086913958220563}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}

@@ -89,7 +89,7 @@ SphereCollider:
   m_GameObject: {fileID: 372225408085485565}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -143,8 +143,8 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
+  m_Radius: 2
+  m_SlopeLimit: 0
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
@@ -158,7 +158,7 @@ SphereCollider:
   m_GameObject: {fileID: 5010950958227003382}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -174,11 +174,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 761f0128105951c4eb2fdb463698ab0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossCharacter: {fileID: 0}
+  bossCharacter: {fileID: 1374519751952584286}
   target: {fileID: 0}
   timeToMove: 2
+  timeToWait: 1
   timeBetweenShoot: 0.2
+  shootVolleyCount: 3
   shootAngle: 30
+  maxMove: 5
+  speedBoost: 2
 --- !u!114 &1374519751952584286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,8 +197,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 0}
   speed: 10
-  hp: 50
-  autoMover: {fileID: 0}
+  maxHp: 10
+  autoMover: {fileID: 6003429723511717577}
+  shooter: {fileID: 4347381276236139176}
 --- !u!114 &6706477124575986097
 MonoBehaviour:
   m_ObjectHideFlags: 0
