@@ -653,6 +653,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1374519751952584286, guid: 723c886c3709473469e74af1f3608a67,
+        type: 3}
+      propertyPath: characterController
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2502238860973212295, guid: 723c886c3709473469e74af1f3608a67,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -712,6 +717,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 5010950958227003382, guid: 723c886c3709473469e74af1f3608a67,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 723c886c3709473469e74af1f3608a67, type: 3}
@@ -1057,7 +1067,7 @@ PrefabInstance:
     - target: {fileID: 5850679908142408440, guid: eedeeeb4f9124d24292dc9974830cdde,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5850679908142408441, guid: eedeeeb4f9124d24292dc9974830cdde,
         type: 3}

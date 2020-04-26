@@ -16,7 +16,7 @@ public class AirEnemyController : MonoBehaviour
 
     private RandomGenerator randomGenerator;
 
-    private State currentState;
+    private State newState;
     private State previousState;
 
     public float speed = 10; 
@@ -32,18 +32,18 @@ public class AirEnemyController : MonoBehaviour
 
         randomGenerator = new RandomGenerator(leftBotBounding,rightTopBounding,maxDistansPerMove * 0.2f,maxDistansPerMove);
 
-        currentState = State.Idle;
-        previousState = State.Idle;
+        //newState = State.Idle;
+        //previousState = State.Idle;
 
-        MoveToRandoimPosition();
+        Wait();
     }
 
 
     private bool IsPreviousStateIs(State state) => this.previousState == state;
     private void SetState(State state)
     {
-        previousState = currentState;
-        currentState = state;
+        previousState = newState;
+        newState = state;
     }
     private enum State
     {
@@ -52,18 +52,15 @@ public class AirEnemyController : MonoBehaviour
         Shoot
     }
 
-    private IEnumerator Shoot()
+
+    private void Shoot()
     {
-        SetState(State.Shoot);
-
-        yield return new WaitForSeconds(timeToWait * 0.5f);
-
         if(target)
             transform.LookAt(target.transform);
         
         enemyCharacter.Shoot();
 
-        Invoke("OnShootEnd", timeToWait * 0.5f);
+        Invoke("OnShootEnd", timeToWait);
     }
     private void OnShootEnd()
     {
@@ -73,7 +70,6 @@ public class AirEnemyController : MonoBehaviour
 
     private void MoveToRandoimPosition()
     {
-        SetState(State.Move);
         enemyCharacter.MoveTo(randomGenerator.GetRandomPosition(transform.position));
     }
     private void OnMoveEnd()
@@ -82,16 +78,44 @@ public class AirEnemyController : MonoBehaviour
         OnActionEnd();
     }
 
-    private void OnActionEnd()
+    private void Wait()
+    {
+        Invoke("OnWaitEnd", timeToWait);
+    }
+    private void OnWaitEnd()
     {
         switch (previousState)
         {
             case State.Move:
-                StartCoroutine(Shoot());
+                SetState(State.Shoot);
                 break;
 
             case State.Shoot:
+                SetState(State.Move);
+                break;
+
+            default:
+                SetState(State.Move);
+                break;
+        }
+
+        OnActionEnd();
+    }
+
+    private void OnActionEnd()
+    {
+        switch (newState)
+        {
+            case State.Move:
                 MoveToRandoimPosition();
+                break;
+
+            case State.Shoot:
+                Shoot();
+                break;
+
+            case State.Idle:
+                Wait();
                 break;
         }
     }
