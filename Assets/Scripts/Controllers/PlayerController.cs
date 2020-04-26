@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
         if (Mathf.Abs(motion.x) < moveBias
          && Mathf.Abs(motion.z) < moveBias)
         {
-            if(!heroCharacter.targetTracker.IsTracking)
+            if(!heroCharacter.GetTargetTracker.IsTracking)
                 heroCharacter.StartAttackMode();
         }
         else

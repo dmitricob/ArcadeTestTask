@@ -6,9 +6,10 @@ using UnityEngine;
 
 public class BossCharacter : Character, IShootable
 {
-    public AutoMoverToWithTime autoMover;
+    private AutoMoverToWithTime autoMover;
+    public AutoMoverToWithTime GetAutoMover => autoMover;
 
-    public Shooter shooter;
+    private Shooter shooter;
 
     private new void Initialization()
     {

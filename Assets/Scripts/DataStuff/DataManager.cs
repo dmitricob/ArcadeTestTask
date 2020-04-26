@@ -10,78 +10,66 @@ namespace Assets.Scripts.DataStuff
 {
     public static class DataManager
     {
-        private static AllGameDataPresets gameData;
 
-        private static string fileName = "AllDataPresets.json";
-
-        private static string ConvertDataToJsonString(AllGameDataPresets gameData)
+        private static string filetype = ".json";
+        private static string folderName = "Presets";
+        
+        private static string ConvertDataToJsonString<T>(T data)
         {
-            Debug.Log("game data to json " + JsonUtility.ToJson(gameData));
-            return JsonUtility.ToJson(gameData);
-        }
-        private static string ConvertDataToJsonString()
-        {
-            return ConvertDataToJsonString(gameData);
+            return JsonUtility.ToJson(data);
         }
 
 
-        private static void ConvertJsonStringToData(string json)
+        private static T ConvertJsonStringToData<T>(string json)
         {
-            gameData = JsonUtility.FromJson<AllGameDataPresets>(json);
+            return JsonUtility.FromJson<T>(json);
         }
 
-        public static AllGameDataPresets GetData()
-        {
-            return gameData;
-        }
 
-        private static void UpdateDataFromeJsonString(string json, AllGameDataPresets gameData)
+        private static void UpdateDataFromeJsonString<T>(string json, T gameData)
         {
             JsonUtility.FromJsonOverwrite(json, gameData);
         }
 
 
-        private static void WriteJsonStringToFile(string json)
+        private static void WriteJsonStringToFile<T>(string json)
         {
-            File.WriteAllText(Path.Combine(Application.dataPath,fileName), json);
+            File.WriteAllText(Path.Combine(Application.dataPath,folderName,typeof(T).Name + filetype), json);
         }
-        private static string ReadJsonToString()
+        private static void WriteJsonStringToFile<T>(string additionFolder, string json)
         {
-            return File.ReadAllText(Path.Combine(Application.dataPath, fileName));
+            File.WriteAllText(Path.Combine(Application.dataPath,folderName, additionFolder, typeof(T).Name + filetype), json);
         }
-
-
-        public static void InitData()
+        private static string ReadJsonToString<T>()
         {
-            string json = ReadJsonToString();
-            ConvertJsonStringToData(json);
-        }
-        public static void UpdateData()
-        {
-            string json = ReadJsonToString();
-            UpdateDataFromeJsonString(json, gameData);
+            return Resources.Load<TextAsset>(
+                        Path.Combine(
+                            folderName, typeof(T).Name + filetype)
+                    ).text;
+            //return File.ReadAllText(Path.Combine(Application.dataPath, typeof(T).Name + "filetype"));
         }
 
-        public static void LoadData()
+
+        public static T InitData<T>()
         {
-            if(gameData == null)
-            {
-                InitData();
-            }
-            else
-            {
-                UpdateData();
-            }
+            string json = ReadJsonToString<T>();
+            return ConvertJsonStringToData<T>(json);
         }
-        public static void SaveData()
+        public static void UpdateData<T>(T wahtToUpdate)
         {
-            string json = ConvertDataToJsonString();
-            WriteJsonStringToFile(json);
+            string json = ReadJsonToString<T>();
+            UpdateDataFromeJsonString(json, wahtToUpdate);
         }
-        public static void SaveData(AllGameDataPresets gd)
+
+        public static void SaveData<T>(T whatToSave)
         {
-            string json = ConvertDataToJsonString(gd);
-            WriteJsonStringToFile(json);
+            string json = ConvertDataToJsonString(whatToSave);
+            WriteJsonStringToFile<T>(json);
+        }
+        public static void SaveData<T>(string additionFolder, T whatToSave)
+        {
+            string json = ConvertDataToJsonString(whatToSave);
+            WriteJsonStringToFile<T>(additionFolder, json);
         }
     }
 }

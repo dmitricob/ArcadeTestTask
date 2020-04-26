@@ -11,7 +11,6 @@ namespace Assets.Scripts.Interfaces
     [RequireComponent(typeof(IMoveable))]
     public abstract class MoverTo : MonoBehaviour, IMoverTo
     {
-        public float speed = 10;
         private Vector3 targetPosition;
         public Action OnArrive;
         
@@ -42,7 +41,6 @@ namespace Assets.Scripts.Interfaces
                     EndMove();
                     return;
                 }
-                //transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * speed);
 
                 //step equal 1 * deltaTime
                 Vector3 newPosition = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime);

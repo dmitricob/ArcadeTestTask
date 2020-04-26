@@ -1,17 +1,24 @@
 ﻿using Assets.Scripts;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class Shooter : MonoBehaviour, IShootable
 {
+
     public GameObject projectilePrefab;
+    [NonSerialized]
     public float fireRate;
     public float damage;
+    [NonSerialized]
     public float bulletTtl;
     public float bulletSpeed;
+    [NonSerialized]
     public LayerMask whatCanShoot;
 
+    [NonSerialized]
     public Vector3 offset;
 
     private Vector3 spread;

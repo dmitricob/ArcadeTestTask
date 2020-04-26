@@ -6,11 +6,12 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(Character))]
+[Serializable]
 public class BossController : MonoBehaviour
 {
-    public BossCharacter bossCharacter;
+    private BossCharacter bossCharacter;
 
-    public GameObject target;
+    private GameObject target;
 
     private RandomGenerator randomGenerator;
 
@@ -39,7 +40,7 @@ public class BossController : MonoBehaviour
         if (!bossCharacter)
             Debug.LogError(gameObject + ": No character");
 
-        bossCharacter.autoMover.OnArrive = OnMoveEnd;
+        bossCharacter.GetAutoMover.OnArrive = OnMoveEnd;
 
 
         randomGenerator = new RandomGenerator(

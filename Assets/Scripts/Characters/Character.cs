@@ -6,16 +6,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
+[Serializable]
 public class Character : MonoBehaviour, IDamageable, IMoveable
-
 {
+    [NonSerialized]
     public CharacterController characterController;
 
-    [SerializeField]
     public float speed;
 
-    [SerializeField]    
     public float maxHp;
+
 
     private float hp;
     public float GetHp => hp;

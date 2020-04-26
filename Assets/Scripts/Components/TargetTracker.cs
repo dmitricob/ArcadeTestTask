@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class TargetTracker : MonoBehaviour
 {
     public float findRadius;
+    [NonSerialized]
     public LayerMask whoToTrack;
 
     private GameObject target;

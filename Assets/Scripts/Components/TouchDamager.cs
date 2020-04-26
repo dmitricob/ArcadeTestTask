@@ -1,22 +1,21 @@
 ﻿using Assets.Scripts;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 //[RequireComponent(typeof(Collider))]
 [RequireComponent(typeof(CharacterController))]
+[Serializable]
 public class TouchDamager : MonoBehaviour
 {
     public float damage;    // per sec
 
-    private float timeTodamage = 1; // sec
+    public float timeTodamage = 1; // sec
+
     private float time;
     private float hitTime;
     private GameObject currentColider;
-
-    private void Start()
-    {
-    }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {

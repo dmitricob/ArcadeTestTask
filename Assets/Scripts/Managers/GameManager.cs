@@ -27,14 +27,24 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //InitializeManager();
-                
-        DataManager.LoadData();
-        gamedata = DataManager.GetData();
-        Debug.Log(gamedata);
+
+        //DataManager.LoadData();
+        //gamedata = DataManager.GetData();
+
+
+        Debug.Log(typeof(AllGameDataPresets).Name);
         SpawnHero();
 
+        DataManager.SaveData("Hero",activHero.GetComponent<HeroCharacter>());
+        DataManager.SaveData("Hero",activHero.GetComponent<HeroCharacter>());
+        DataManager.SaveData("Other",activHero.GetComponent<Shooter>());
+
+        DataManager.SaveData("AirEnemy", enemy1Pref.GetComponent<AirEnemyCharacter>());
+        DataManager.SaveData("GroundEnemy", enemy2Pref.GetComponent<HeroCharacter>());
+        DataManager.SaveData("Boss", bossPref.GetComponent<HeroCharacter>());
+
         // move to scens
-        switch(SceneManager.GetActiveScene().buildIndex )
+        switch (SceneManager.GetActiveScene().buildIndex )
         {
             case 0:
                 InitEnemies1();
@@ -102,10 +112,10 @@ public class GameManager : MonoBehaviour
     public GameObject SpawnHero()
     {
         Vector3 heroSpawnPosition = new Vector3(0,0.5f,-12);
-        var hero = Spawn(heroPref, heroSpawnPosition);
-        hero.GetComponent<Character>().onDie += OnHeroDie;
+        activHero= Spawn(heroPref, heroSpawnPosition);
+        activHero.GetComponent<Character>().onDie += OnHeroDie;
 
-        return hero;
+        return activHero;
     }
 
     private void OnHeroDie(GameObject diedGameObject)

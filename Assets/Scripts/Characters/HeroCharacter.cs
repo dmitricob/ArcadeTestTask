@@ -6,9 +6,10 @@ using UnityEngine;
 
 public class HeroCharacter : Character
 {
-    public Shooter characterShooter;
-    public TargetTracker targetTracker;
+    private Shooter characterShooter;
+    private TargetTracker targetTracker;
 
+    public TargetTracker GetTargetTracker => targetTracker;
 
     public new void Initialization()
     {

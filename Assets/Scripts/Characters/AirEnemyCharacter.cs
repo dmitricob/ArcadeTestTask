@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class AirEnemyCharacter : Character
 {
-    public Shooter chracterShooter;
-    public MoverTo characterMover;
+    private Shooter chracterShooter;
+    private MoverTo characterMover;
+
+    public MoverTo GetCharacterMover => characterMover;
 
     public new void Initialization()
     {

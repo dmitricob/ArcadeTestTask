@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class NearestFinder
 {
-    private float findRadius = 10;
+    private float findRadius;
     private LayerMask whoToFind;
 
     public NearestFinder(float findRadius, LayerMask whoToFind)

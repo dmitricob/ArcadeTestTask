@@ -1,18 +1,20 @@
 ﻿using Assets.Scripts;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Character))]
+[Serializable]
 public class AirEnemyController : MonoBehaviour
 {
-    public AirEnemyCharacter enemyCharacter;
+    private AirEnemyCharacter enemyCharacter;
 
-    public GameObject target;
+    private GameObject target;
 
     public float maxDistansPerMove;
-    public Vector2 leftBotBounding;
-    public Vector2 rightTopBounding;
+    private Vector2 leftBotBounding;
+    private Vector2 rightTopBounding;
     public float timeToWait;
 
     private RandomGenerator randomGenerator;
@@ -29,7 +31,7 @@ public class AirEnemyController : MonoBehaviour
             Debug.LogError("No hero active");
 
         enemyCharacter = GetComponent<Character>() as AirEnemyCharacter;
-        enemyCharacter.characterMover.OnArrive = OnMoveEnd;
+        enemyCharacter.GetCharacterMover.OnArrive = OnMoveEnd;
 
         randomGenerator = new RandomGenerator(leftBotBounding,rightTopBounding,maxDistansPerMove * 0.2f,maxDistansPerMove);
 

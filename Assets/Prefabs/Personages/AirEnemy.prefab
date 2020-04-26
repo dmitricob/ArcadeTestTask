@@ -80,11 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 008705a2b1a39da46ab3eae7c0db6a62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCharacter: {fileID: 0}
-  target: {fileID: 0}
   maxDistansPerMove: 10
-  leftBotBounding: {x: -13, y: -13}
-  rightTopBounding: {x: 13, y: 13}
   timeToWait: 1
   speed: 10
 --- !u!114 &7835946350776650137
@@ -99,11 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90dd0f0310469144495f0cce375d4883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterController: {fileID: 0}
   speed: 5
   maxHp: 10
-  chracterShooter: {fileID: 8989605570158738917}
-  characterMover: {fileID: -4523286974776515421}
 --- !u!114 &8989605570158738917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,14 +111,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1529212708514532820, guid: 45081bb2044eda8439e1f342cee87ef7,
     type: 3}
-  fireRate: 1
   damage: 10
-  bulletTtl: 10
   bulletSpeed: 11
-  whatCanShoot:
-    serializedVersion: 2
-    m_Bits: 8192
-  offset: {x: 0, y: 0, z: 0}
 --- !u!114 &-4523286974776515421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f59c27c877f65ea49ba66717f3aa6eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
 --- !u!1 &6646822910676055774
 GameObject:
   m_ObjectHideFlags: 0

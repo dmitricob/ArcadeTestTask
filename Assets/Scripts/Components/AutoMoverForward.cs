@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(IMoveable))]
 public class AutoMoverForward : MonoBehaviour
 {
-    public GameObject target;
+    private GameObject target;
 
     private IMoveable moveable;
 
