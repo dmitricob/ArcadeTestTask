@@ -14,14 +14,21 @@ public class Character : MonoBehaviour, IDamageable, IMoveable
     [SerializeField]
     public float speed;
 
-    [SerializeField]
-    public float hp;
+    [SerializeField]    
+    public float maxHp;
+
+    private float hp;
+    public float GetHp => hp;
 
     public Action OnDie;
+
+    public delegate void OnDamaged();
+    public OnDamaged onDamaged;
 
     public void Initialization()
     {
         characterController = GetComponent<CharacterController>();
+        hp = maxHp;
 
         OnDie = SelfDestroy;
     }
@@ -38,14 +45,15 @@ public class Character : MonoBehaviour, IDamageable, IMoveable
 
     public void TakeDamage(float damage)
     {
-        Debug.Log(gameObject + " take damage " + damage);
-
+        Debug.Log(gameObject + $" take {damage} damage");
         hp -= damage;
         if(hp <= 0)
         {
             hp = 0;
             OnDie();
         }
+
+        onDamaged.Invoke();
     }
 
     public void Die()
@@ -55,6 +63,7 @@ public class Character : MonoBehaviour, IDamageable, IMoveable
 
     private void SelfDestroy()
     {
+
         Destroy(gameObject);
     }
 }

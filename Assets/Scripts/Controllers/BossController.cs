@@ -106,6 +106,7 @@ public class BossController : MonoBehaviour
     {
         if (isSpeedBoosted)
             BoostSpeedSwap(speedBoost);
+
         SetState(State.Idle);
         OnEndAction();
     }

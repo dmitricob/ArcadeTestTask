@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2503745269417017243}
   - component: {fileID: 2503745269417017240}
   - component: {fileID: 6847086913051395188}
+  - component: {fileID: 4897743403597764674}
   m_Layer: 13
   m_Name: Hero
   m_TagString: Player
@@ -81,8 +82,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f8959cf736fee1428f30cb115c1604e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  isAutoShoot: 1
 --- !u!114 &2503745269417017243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +96,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 0}
   speed: 0
-  hp: 0
   characterShooter: {fileID: 0}
   targetTracker: {fileID: 0}
 --- !u!114 &2503745269417017240
@@ -138,6 +136,20 @@ MonoBehaviour:
   whoToTrack:
     serializedVersion: 2
     m_Bits: 6144
+--- !u!114 &4897743403597764674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503745269417017250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a44b80775c1b9084092af9ac5ef0ac44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpBarController: {fileID: 0}
+  character: {fileID: 0}
 --- !u!1 &4993427875072439522
 GameObject:
   m_ObjectHideFlags: 0
