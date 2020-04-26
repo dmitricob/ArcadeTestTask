@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 395081142486425397}
   - component: {fileID: 395081142486425396}
   - component: {fileID: 5744751981416189399}
-  - component: {fileID: 3981088183410565557}
+  - component: {fileID: 6177703885729979710}
   m_Layer: 11
   m_Name: GroundEnemy
   m_TagString: Enemy
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
---- !u!114 &3981088183410565557
+--- !u!114 &6177703885729979710
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,10 +119,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 395081142486425398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e8dc6c31ad2adc4a8490fda323536bf, type: 3}
+  m_Script: {fileID: 11500000, guid: f59c27c877f65ea49ba66717f3aa6eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  speed: 10
 --- !u!1 &609134307646769936
 GameObject:
   m_ObjectHideFlags: 0

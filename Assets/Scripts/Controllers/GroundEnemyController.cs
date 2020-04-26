@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Interfaces;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,32 +11,16 @@ public class GroundEnemyController : MonoBehaviour
 
     private Vector3 direction;
 
-    // Start is called before the first frame update
+    private MoverTo autoMover;
+    
     void Start()
     {
-        if (!target)
-            target = FindObjectOfType<HeroCharacter>().gameObject;
-        enemyCharacter = GetComponent<GroundEnemyCharacter>();
-        
+        target = FindObjectOfType<HeroCharacter>().gameObject;
+        autoMover = GetComponent<MoverTo>();
     }
 
-    // Update is called once per frame
-    //void Update()
-    //{
-    //    direction = DirectionToTarget();
-    //    direction *= Time.deltaTime;
-
-    //    enemyCharacter.Move(direction);
-    //}
-
-    private Vector3 DirectionToTarget()
-    {
-        if (!target)
-            return default(Vector3);
-
-        direction = target.transform.position - transform.position;
-        direction.y = 0;
-        direction.Normalize();
-        return direction;
+    private void Update()
+    {       
+        autoMover.MoveTo(target.transform.position);
     }
 }

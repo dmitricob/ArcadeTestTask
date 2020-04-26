@@ -102,10 +102,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2502238860973212295}
+  - component: {fileID: 7393882353689127902}
+  - component: {fileID: 4272752560249420152}
   - component: {fileID: 1856331129091438142}
   - component: {fileID: 1374519751952584286}
   - component: {fileID: 6706477124575986097}
   - component: {fileID: 4347381276236139176}
+  - component: {fileID: 6003429723511717577}
   m_Layer: 11
   m_Name: Boss
   m_TagString: Untagged
@@ -128,6 +131,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!143 &7393882353689127902
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5010950958227003382}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &4272752560249420152
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5010950958227003382}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1856331129091438142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossCharacter: {fileID: 0}
+  target: {fileID: 0}
   timeToMove: 2
   timeBetweenShoot: 0.2
   shootAngle: 30
@@ -159,6 +194,7 @@ MonoBehaviour:
   characterController: {fileID: 0}
   speed: 10
   hp: 50
+  autoMover: {fileID: 0}
 --- !u!114 &6706477124575986097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4942f1065d6f754e93292f8fb3747de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 1
 --- !u!114 &4347381276236139176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,8 +225,22 @@ MonoBehaviour:
   fireRate: 1
   damage: 5
   bulletTtl: 5
-  bulletSpeed: 5
+  bulletSpeed: 10
   whatCanShoot:
     serializedVersion: 2
     m_Bits: 8192
   offset: {x: 0, y: 0, z: 0}
+--- !u!114 &6003429723511717577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5010950958227003382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d59eb6e58c06572478a31a74521c47cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  timeToMove: 2

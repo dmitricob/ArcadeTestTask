@@ -1,9 +1,11 @@
 ﻿using Assets.Scripts;
 using Assets.Scripts.Interfaces;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterController))]
 public class Character : MonoBehaviour, IDamageable, IMoveable
 
 {
@@ -15,10 +17,13 @@ public class Character : MonoBehaviour, IDamageable, IMoveable
     [SerializeField]
     public float hp;
 
+    public Action OnDie;
 
     public void Initialization()
     {
         characterController = GetComponent<CharacterController>();
+
+        OnDie = SelfDestroy;
     }
 
     /// <summary>
@@ -43,7 +48,12 @@ public class Character : MonoBehaviour, IDamageable, IMoveable
         }
     }
 
-    public void OnDie()
+    public void Die()
+    {
+        OnDie();
+    }
+
+    private void SelfDestroy()
     {
         Destroy(gameObject);
     }

@@ -12,11 +12,11 @@ public class AutoMoverForward : MonoBehaviour
 
     private Vector3 direction;
 
+    private bool isMoveAllowed;
 
 
     void Start()
     {
-
         moveable = GetComponent<IMoveable>();
 
         target = FindObjectOfType<HeroCharacter>().gameObject;
@@ -25,11 +25,18 @@ public class AutoMoverForward : MonoBehaviour
     }
     void Update()
     {
+        if (!isMoveAllowed)
+            return;
+
         direction = DirectionToTarget();
         direction *= Time.deltaTime;
 
         moveable.Move(direction);
     }
+
+    public void StartMove() => isMoveAllowed = true;
+    public void StopMove() => isMoveAllowed = false;
+
     private Vector3 DirectionToTarget()
     {
         if (!target)

@@ -59,8 +59,8 @@ public class TargetTracker : MonoBehaviour
             FindNewTarget();
         }
 
-        if (isTracking)
-            onTargetFind();
+        if (isTracking )
+            onTargetFind?.Invoke();
     }
 
     public void StopTrack()

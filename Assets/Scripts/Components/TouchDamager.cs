@@ -13,7 +13,7 @@ public class TouchDamager : MonoBehaviour
 
     private void Start()
     {
-        if (!gameObject.GetComponent<BoxCollider>())
+        if (!gameObject.GetComponent<Collider>())
             Debug.LogError(gameObject + " havent collider ");
     }
     private void OnTriggerEnter(Collider other)

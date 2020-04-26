@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7835946350776650137}
   - component: {fileID: 8989605570158738917}
   - component: {fileID: -4523286974776515421}
+  - component: {fileID: 4606084783977829764}
   m_Layer: 12
   m_Name: AirEnemy
   m_TagString: Enemy
@@ -121,7 +122,7 @@ MonoBehaviour:
   fireRate: 1
   damage: 10
   bulletTtl: 10
-  bulletSpeed: 5
+  bulletSpeed: 11
   whatCanShoot:
     serializedVersion: 2
     m_Bits: 8192
@@ -139,6 +140,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+--- !u!114 &4606084783977829764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5850679908142408440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d59eb6e58c06572478a31a74521c47cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  timeToMove: 2
 --- !u!1 &6646822910676055774
 GameObject:
   m_ObjectHideFlags: 0

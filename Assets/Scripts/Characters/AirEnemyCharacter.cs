@@ -1,17 +1,18 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Interfaces;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AirEnemyCharacter : Character
 {
     public Shooter chracterShooter;
-    public AutoMoverTo characterMover;
+    public MoverTo characterMover;
 
     public void Initialization()
     {
         base.Initialization();
         chracterShooter = GetComponent<Shooter>();
-        characterMover = GetComponent<AutoMoverTo>();
+        characterMover = GetComponent<MoverTo>();
     }
 
     private void Start()
