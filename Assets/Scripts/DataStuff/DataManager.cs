@@ -13,6 +13,7 @@ namespace Assets.Scripts.DataStuff
         private static AllGameDataPresets gameData;
 
         private static string fileName = "AllDataPresets.json";
+        private static string fileName1 = "AllDataPresets";
 
         private static string ConvertDataToJsonString(AllGameDataPresets gameData)
         {
@@ -47,7 +48,8 @@ namespace Assets.Scripts.DataStuff
         }
         private static string ReadJsonToString()
         {
-            return File.ReadAllText(Path.Combine(Application.dataPath, fileName));
+            return Resources.Load<TextAsset>(fileName1)?.text;
+            //return File.ReadAllText(Path.Combine(Application.dataPath, fileName));
         }
 
 

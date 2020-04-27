@@ -119,7 +119,7 @@ MonoBehaviour:
   bulletSpeed: 15
   whatCanShoot:
     serializedVersion: 2
-    m_Bits: 6951
+    m_Bits: 6656
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &6847086913051395188
 MonoBehaviour:

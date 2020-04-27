@@ -1,10 +1,10 @@
 {  
   "playerHp": 15.0,
   "playerSpeed": 15.0,
-  "playerFireRate": 3.0,
+  "playerFireRate": 10.0,
   "groundEnemyHp": 10.0,
   "groundEnemySpeed": 7.0,
-  "airEnemyHp": 10.0,
+  "airEnemyHp": 3.0,
   "airEnemySpeed": 10.0,
   "bossEnemyHp": 20.0,
   "bossEnemySpeed": 10.0,

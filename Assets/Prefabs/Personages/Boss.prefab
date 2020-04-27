@@ -197,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 0}
   speed: 10
-  maxHp: 10
+  maxHp: 20
   autoMover: {fileID: 6003429723511717577}
   shooter: {fileID: 4347381276236139176}
 --- !u!114 &6706477124575986097
@@ -227,13 +227,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1529212708514532820, guid: 45081bb2044eda8439e1f342cee87ef7,
     type: 3}
-  fireRate: 1
+  fireRate: 3
   damage: 5
-  bulletTtl: 5
-  bulletSpeed: 10
+  bulletTtl: 10
+  bulletSpeed: 17
   whatCanShoot:
     serializedVersion: 2
-    m_Bits: 8192
+    m_Bits: 8704
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &6003429723511717577
 MonoBehaviour:

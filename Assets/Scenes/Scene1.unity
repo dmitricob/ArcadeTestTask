@@ -298,9 +298,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 034b2b184db7f834bb7ca5b32f3f2743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy1Pref: {fileID: 5850679908142408440, guid: eedeeeb4f9124d24292dc9974830cdde,
+  airEnemyPref: {fileID: 5850679908142408440, guid: eedeeeb4f9124d24292dc9974830cdde,
     type: 3}
-  enemy2Pref: {fileID: 395081142486425398, guid: 68f48c2684a5d084f98c4ef4921766df,
+  groundEnemyPref: {fileID: 395081142486425398, guid: 68f48c2684a5d084f98c4ef4921766df,
     type: 3}
   bossPref: {fileID: 5010950958227003382, guid: 723c886c3709473469e74af1f3608a67,
     type: 3}
@@ -460,7 +460,7 @@ PrefabInstance:
     - target: {fileID: 224977699150327530, guid: e0815e227ed46e445b99930271e8942c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 259
+      value: 268
       objectReference: {fileID: 0}
     - target: {fileID: 224977699150327530, guid: e0815e227ed46e445b99930271e8942c,
         type: 3}

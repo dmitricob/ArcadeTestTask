@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     // ToDo autoload prefabs
-    public GameObject enemy1Pref; // flyer
-    public GameObject enemy2Pref; // grounder
+    public GameObject airEnemyPref; // flyer
+    public GameObject groundEnemyPref; // grounder
     public GameObject bossPref; // boss
 
     public GameObject heroPref;
@@ -30,8 +30,12 @@ public class GameManager : MonoBehaviour
                 
         DataManager.LoadData();
         gamedata = DataManager.GetData();
-        Debug.Log(gamedata);
+        gamedata.SetHeroValues(heroPref);
+        gamedata.SetAirEnemyValues(airEnemyPref);
+        gamedata.SetGroundEnemyValues(groundEnemyPref);
+        gamedata.SetBossValues(bossPref);
         SpawnHero();
+
 
         // move to scens
         switch(SceneManager.GetActiveScene().buildIndex )
@@ -63,7 +67,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             Debug.Log("Spawn");
-            Instantiate(enemy1Pref, transform);
+            Instantiate(airEnemyPref, transform);
         }
     }
 
@@ -123,7 +127,7 @@ public class GameManager : MonoBehaviour
     }
     public GameObject SpawnEnemy1(Vector3 pos)
     {
-        return Spawn(enemy1Pref, pos);
+        return Spawn(airEnemyPref, pos);
     }
 
     public GameObject SpawnEnemy2(float x, float y, float z)
@@ -132,7 +136,7 @@ public class GameManager : MonoBehaviour
     }
     public GameObject SpawnEnemy2(Vector3 pos)
     {
-        return Spawn(enemy2Pref, pos);
+        return Spawn(groundEnemyPref, pos);
     }    
     public GameObject SpawnBoss()
     {
